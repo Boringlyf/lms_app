@@ -7,6 +7,8 @@ import 'package:lms_app/Screens/schedule_screen.dart';
 import 'package:lms_app/Screens/student_homescreen.dart';
 import 'package:lms_app/Screens/student_homework_screen.dart';
 import 'package:lms_app/Screens/student_quiz_screen.dart';
+import 'package:lms_app/providers/courses_provider.dart';
+import 'package:provider/provider.dart';
 
 class ChoicesStackWidget extends StatelessWidget {
   const ChoicesStackWidget({super.key});

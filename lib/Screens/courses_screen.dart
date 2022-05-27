@@ -9,13 +9,6 @@ class CoursesScreen extends StatelessWidget {
 
   var pageCounter = 0;
 
-  final pageList = [
-    Container(color: Colors.green),
-    Container(
-      color: Colors.pink,
-    )
-  ];
-
   @override
   Widget build(BuildContext context) {
     final course_listner = Provider.of<CoursesProvider>(context).subjects;
@@ -31,45 +24,45 @@ class CoursesScreen extends StatelessWidget {
                 height: 700,
                 // color: Colors.red,
                 child: ListView.builder(
-                    itemCount: course_listner.length,
-                    itemBuilder: (context, index) => Container(
-                          padding: EdgeInsets.symmetric(horizontal: 12),
-                          width: 300,
-                          height: 100,
-                          margin: EdgeInsets.all(5),
-                          child: GestureDetector(
-                            onTap: () => Navigator.of(context).push(
-                                MaterialPageRoute(
-                                    builder: (context) => nextScreen)),
-                            child: Card(
-                              color: Colors.deepPurple[400],
-                              elevation: 5,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 15),
-                                child: ListTile(
-                                  title: Padding(
-                                    padding: EdgeInsets.symmetric(vertical: 10),
-                                    child: Text(
-                                      course_listner[index].subjectName,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 25,
-                                          color: Colors.white),
-                                    ),
-                                  ),
-                                  subtitle: Text(
-                                    course_listner[index].teacherName,
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                ),
+                  itemCount: course_listner.length,
+                  itemBuilder: (context, index) => Container(
+                    padding: EdgeInsets.symmetric(horizontal: 12),
+                    width: 300,
+                    height: 100,
+                    margin: EdgeInsets.all(5),
+                    child: GestureDetector(
+                      onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => nextScreen,
+                      )),
+                      child: Card(
+                        color: Colors.deepPurple[400],
+                        elevation: 5,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 15),
+                          child: ListTile(
+                            title: Padding(
+                              padding: EdgeInsets.symmetric(vertical: 10),
+                              child: Text(
+                                course_listner[index].subjectName,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 25,
+                                    color: Colors.white),
                               ),
                             ),
+                            subtitle: Text(
+                              course_listner[index].teacherName,
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ),
-                        )),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
               ),
             ),
           ),

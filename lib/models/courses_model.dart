@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-class CoursesModel {
+class CoursesModel with ChangeNotifier {
   final String courseId;
   final String subjectName;
   // final int numOfStudents;
